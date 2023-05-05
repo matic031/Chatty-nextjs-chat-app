@@ -2,7 +2,7 @@ import React from 'react';
 import styled from'styled-components';
 import Head from 'next/head';
 import Button from '@material-ui/core/Button';
-import { auth, provider } from './firebase';
+import { auth, provider } from '../components/firebase';
 import { signInWithPopup } from "firebase/auth";
 
 

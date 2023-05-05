@@ -1,6 +1,6 @@
 import '@/styles/globals.css'
 import { useAuthState } from "react-firebase-hooks/auth";
-import { auth, db, provider } from "./firebase";
+import { auth, db, provider } from "../components/firebase";
 import Login from "./login";
 import Loading from "../components/Loading";
 import firebase from "firebase/app";

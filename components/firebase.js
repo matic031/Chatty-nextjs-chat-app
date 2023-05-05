@@ -19,10 +19,3 @@ const provider = new GoogleAuthProvider();
 
 export { db, auth, provider};
 
-export default {
-  app,
-  db,
-  auth,
-  provider,
-};
-

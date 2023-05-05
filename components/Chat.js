@@ -4,7 +4,7 @@ import styled from'styled-components';
 import Avatar from '@material-ui/core/Avatar';
 import { useAuthState } from'react-firebase-hooks/auth';
 import { collection, addDoc, where, query } from "firebase/firestore"; 
-import { auth, db } from '../pages/firebase';
+import { auth, db } from './firebase';
 import { useCollection } from'react-firebase-hooks/firestore';
 import { useRouter } from 'next/router';
 
