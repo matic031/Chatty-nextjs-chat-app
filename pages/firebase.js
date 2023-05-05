@@ -1,3 +1,4 @@
+import React from 'react';
 import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
 import { getAuth, GoogleAuthProvider } from 'firebase/auth';
@@ -17,3 +18,11 @@ const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 
 export { db, auth, provider};
+
+export default {
+  app,
+  db,
+  auth,
+  provider,
+};
+
