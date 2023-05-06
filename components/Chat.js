@@ -28,7 +28,7 @@ function Chat({id, users}) {
   return (
     <Container onClick ={enterChat}>
         {recipient ? (
-            <UserAvatar src={recipient?.photoURL} />
+            <UserAvatar src={recipient?.photoURL}></UserAvatar>
         ) : (
             <UserAvatar>{recipientEmail[0]}</UserAvatar>
         )}
