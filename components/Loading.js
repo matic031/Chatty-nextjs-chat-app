@@ -1,6 +1,5 @@
 import React from 'react'
 import { Circle } from 'better-react-spinkit'
-import { Helmet } from 'react-helmet';
 
 function Loading() {
   return (

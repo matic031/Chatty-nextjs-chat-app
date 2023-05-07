@@ -87,11 +87,15 @@ function ChatScreen({ chat, messages }) {
   };
 
   const handleKeyDown = (e) => {
-    if (e.key === "Enter") {
+    if (e.key === "Enter" && input) {
       e.preventDefault();
       sendMessage(e);
     }
   };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messagesList]);
 
   return (
     <Container>
@@ -103,9 +107,9 @@ function ChatScreen({ chat, messages }) {
         )}
 
         <HeaderInformation>
-          <h3>{recipientEmail}</h3>
+        <h3 style={{ marginTop: "20px" }}>{recipientEmail}</h3>
           {recipientSnapshot ? (
-            <p>Last active: {' '}
+            <p style={{ marginTop: "-1px" }}>Last active: {' '}
             {recipient?.lastSeen.toDate() ? (
                 <TimeAgo datetime={recipient?.lastSeen?.toDate()} />
             ): "Unavailable"}
@@ -208,11 +212,11 @@ const HeaderInformation = styled.div`
   `;
 
   const EndOfMessage = styled.div`
-    margin-bottom: 50px;
+    margin-bottom: 20px;
   `;
 
   const MessageContainer = styled.div`
-    padding: 30px;
+    padding:70px;
     background-color: #e5ded8;
     min-height: 90vh;
     
