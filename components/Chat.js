@@ -38,7 +38,7 @@ function Chat({id, users}) {
   )
 }
 
-export default Chat
+export default Chat;
 
 const Container = styled.div`
     display:flex;

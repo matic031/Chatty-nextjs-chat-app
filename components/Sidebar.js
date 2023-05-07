@@ -47,7 +47,10 @@ function Sidebar() {
   return (
     <Container>
       <Header>
-        <UserAvatar src={user.photoURL} onClick={() => auth.signOut()} />
+        <UserInfoContainer>
+          <UserAvatar src={user.photoURL} onClick={() => auth.signOut()} />
+          <UserName>{user.displayName}</UserName>
+        </UserInfoContainer>
         <IconsContainer>
           <IconButton>
             <ChatIcon />
@@ -71,6 +74,15 @@ function Sidebar() {
 }
 
 export default Sidebar;
+
+const UserInfoContainer = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+const UserName = styled.div`
+  margin-left: 10px;
+`;
 
 
 const Container = styled.div`
