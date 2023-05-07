@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import styled from'styled-components'
 import { auth,db } from './firebase'
 import { useAuthState } from'react-firebase-hooks/auth'
@@ -24,6 +24,8 @@ function ChatScreen({ chat, messages }) {
   const [messagesList, setMessagesList] = useState([]);
   const [recipient, setRecipient] = useState(null);
   const [recipientSnapshot, setRecipientSnapshot] = useState(null);
+
+  const endOfMessagesRef = useRef(null);
 
   const recipientEmail = getRecipientEmail(chat.users, user);
 
@@ -57,6 +59,13 @@ function ChatScreen({ chat, messages }) {
     return unsubscribe;
   }, [router.query.id]);
 
+  const scrollToBottom = () => {
+    endOfMessagesRef.current.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }
+
   const sendMessage = async (e) => {
     e.preventDefault();
 
@@ -74,6 +83,7 @@ function ChatScreen({ chat, messages }) {
     });
 
     setInput("");
+    scrollToBottom();
   };
 
   const handleKeyDown = (e) => {
@@ -125,7 +135,7 @@ function ChatScreen({ chat, messages }) {
             timestamp={message.timestamp}
           />
         ))}
-        <EndOfMessage />
+        <EndOfMessage ref={endOfMessagesRef}/>
       </MessageContainer>
 
       <InputContainer>
@@ -197,12 +207,15 @@ const HeaderInformation = styled.div`
 
   `;
 
-  const EndOfMessage = styled.div``;
+  const EndOfMessage = styled.div`
+    margin-bottom: 50px;
+  `;
 
   const MessageContainer = styled.div`
     padding: 30px;
     background-color: #e5ded8;
     min-height: 90vh;
+    overflow-y: auto;
   `;
 
   const HeaderIcons = styled.div``;
