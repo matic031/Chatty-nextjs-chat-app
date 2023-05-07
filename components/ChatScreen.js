@@ -3,9 +3,9 @@ import styled from'styled-components'
 import { auth,db } from './firebase'
 import { useAuthState } from'react-firebase-hooks/auth'
 import { useRouter } from 'next/router'
-import {Avatar} from "@material-ui/core"
-import { MoreVert } from '@mui/icons-material'
-import { AttachFile } from '@mui/icons-material'
+import Avatar from "@material-ui/core/Avatar"
+import MoreVert from '@mui/icons-material/MoreVert'
+import AttachFile from '@mui/icons-material/AttachFile'
 import IconButton from '@mui/material/IconButton'
 import { collection, where, doc, query, orderBy, setDoc, addDoc, serverTimestamp, useCollection, useCollectionData, getDocs, onSnapshot } from "firebase/firestore"
 import InsertEmoticonIcon from '@mui/icons-material/InsertEmoticon'
@@ -215,7 +215,7 @@ const HeaderInformation = styled.div`
     padding: 30px;
     background-color: #e5ded8;
     min-height: 90vh;
-    overflow-y: auto;
+    
   `;
 
   const HeaderIcons = styled.div``;
