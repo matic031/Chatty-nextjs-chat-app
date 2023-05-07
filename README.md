@@ -1,4 +1,4 @@
-#Chatty
+# Chatty
 ![Screenshot](https://github.com/matic031/Chatty-nextjs-chat-app/blob/main/public/Screenshot_1.png)
 
 
