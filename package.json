@@ -27,7 +27,9 @@
     "react-icons": "^4.8.0",
     "styled-components": "^5.3.10",
     "sweetalert2": "^11.7.5",
-    "timeago-react": "^3.0.6"
+    "timeago-react": "^3.0.6",
+    "webpack": "^5.82.0",
+    "webpack-bundle-size-analyzer": "^3.1.0"
   },
   "devDependencies": {
     "babel-loader": "^9.1.2",
