@@ -8,7 +8,7 @@ import { MoreVert } from '@mui/icons-material'
 import { AttachFile } from '@mui/icons-material'
 import IconButton from '@mui/material/IconButton'
 import { collection, doc, query, orderBy, setDoc, addDoc, serverTimestamp, useCollection, useCollectionData, getDocs, onSnapshot } from "firebase/firestore"
-import InputEmoticonIcon from '@mui/icons-material/InsertEmoticon'
+import InsertEmoticonIcon from '@mui/icons-material/InsertEmoticon'
 import MicIcon from '@mui/icons-material/Mic';
 import firebase from "firebase/app";
 import Message from "./Message"
@@ -102,7 +102,7 @@ function ChatScreen({ chat, messages }) {
 </MessageContainer>
 
         <InputContainer>
-      <InputEmoticonIcon />
+      <InsertEmoticonIcon />
       <Input 
       value={input}
       onChange={(e) => setInput(e.target.value)}
